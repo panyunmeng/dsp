@@ -75,6 +75,18 @@ var data={
             count:1
         }
     },
+    stone:{
+        name:"石材",
+        level:1,
+        make:{
+            item:[{
+                id:"CaM",
+                count:1
+            }],
+            time:1,
+            count:1
+        }
+    },
     glass:{
         name:"玻璃",
         level:1,
@@ -302,24 +314,6 @@ var data={
             count:5
         }
     },
-    drad:{
-        name:"氘核燃料罐",
-        level:5,
-        make:{
-            item:[{
-                id:"oh",
-                count:10
-            },{
-                id:"ta",
-                count:1
-            },{
-                id:"superRing",
-                count:1
-            }],
-            time:6,
-            count:1
-        }
-    },
     cb:{
         name:"电路板",
         level:2,
@@ -350,7 +344,7 @@ var data={
             count:1
         }
     },
-    pb:{
+    processor:{
         name:"处理器",
         level:3,
         make:{
@@ -428,6 +422,18 @@ var data={
             count:2
         }
     },
+    spacew:{
+        name:"空间翘曲器",
+        level:7,
+        make:{
+            item:[{
+                id:"m5",
+                count:1
+            }],
+            time:10,
+            count:8
+        }
+    },
     cc:{
         name:"卡西米尔晶体",
         level:5,
@@ -443,6 +449,21 @@ var data={
                 count:1
             }],
             time:4,
+            count:1
+        }
+    },
+    pe:{
+        name:"电浆激发器",
+        level:3,
+        make:{
+            item:[{
+                id:"prism",
+                count:2
+            },{
+                id:"coil",
+                count:4
+            }],
+            time:2,
             count:1
         }
     },
@@ -487,7 +508,7 @@ var data={
                 id:"pfilter",
                 count:2
             },{
-                id:"pb",
+                id:"processor",
                 count:2
             }],
             time:6,
@@ -580,7 +601,7 @@ var data={
                 id:"fm",
                 count:3
             },{
-                id:"pb",
+                id:"processor",
                 count:3
             }],
             time:8,
@@ -602,6 +623,319 @@ var data={
                 count:2
             }],
             time:6,
+            count:1
+        }
+    },
+    diamond:{
+        name:"金刚石",
+        level:3,
+        make:{
+            item:[{
+                id:"eg",
+                count:1
+            }],
+            time:2,
+            count:1
+        }
+    },
+    cs:{
+        name:"晶格硅",
+        level:2,
+        make:{
+            item:[{
+                id:"Si",
+                count:1
+            }],
+            time:2,
+            count:1
+        }
+    },
+    pb:{
+        name:"粒子带宽",
+        level:3,
+        make:{
+            item:[{
+                id:"cpipe",
+                count:2
+            },{
+                id:"plastic",
+                count:1
+            },{
+                id:"cs",
+                count:2
+            }],
+            time:8,
+            count:1
+        }
+    },
+    pc:{
+        name:"粒子容器",
+        level:5,
+        make:{
+            item:[{
+                id:"et",
+                count:2
+            },{
+                id:"Cu",
+                count:2
+            },{
+                id:"grap",
+                count:2
+            }],
+            time:4,
+            count:1
+        }
+    },
+    tc:{
+        name:"推进器",
+        level:3,
+        make:{
+            item:[{
+                id:"steal",
+                count:2
+            },{
+                id:"Cu",
+                count:3
+            }],
+            time:4,
+            count:1
+        }
+    },
+    ld:{
+        name:"物流运输机",
+        level:4,
+        make:{
+            item:[{
+                id:"Fe",
+                count:5
+            },{
+                id:"processor",
+                count:2
+            },{
+                id:"tc",
+                count:2
+            }],
+            time:4,
+            count:1
+        }
+    },
+    sm:{
+        name:"奇异物质",
+        level:6,
+        make:{
+            item:[{
+                id:"pc",
+                count:2
+            },{
+                id:"Fe",
+                count:2
+            },{
+                id:"oh",
+                count:10
+            }],
+            time:8,
+            count:1
+        }
+    },
+    gl:{
+        name:"引力透镜",
+        level:7,
+        make:{
+            item:[{
+                id:"diamond",
+                count:4
+            },{
+                id:"sm",
+                count:1
+            }],
+            time:6,
+            count:1
+        }
+    },
+    photon:{
+        name:"光子",
+        level:0
+    },
+    antimatter:{
+        name:"反物质",
+        level:2,
+        make:{
+            item:[{
+                id:"photon",
+                count:2
+            }],
+            time:2,
+            count:2
+        }
+    },
+    arod:{
+        name:"反物质燃料棒",
+        level:6,
+        make:{
+            item:[{
+                id:"antimatter",
+                count:10
+            },{
+                id:"h2",
+                count:10
+            },{
+                id:"ta",
+                count:1
+            },{
+                id:"acs",
+                count:1
+            }],
+            time:20,
+            count:1
+        }
+    },
+    drad:{
+        name:"氘核燃料罐",
+        level:5,
+        make:{
+            item:[{
+                id:"oh",
+                count:10
+            },{
+                id:"ta",
+                count:1
+            },{
+                id:"superRing",
+                count:1
+            }],
+            time:6,
+            count:1
+        }
+    },
+    hrod:{
+        name:"液氢燃料棒",
+        level:4,
+        make:{
+            item:[{
+                id:"h2",
+                count:5
+            },{
+                id:"Ti",
+                count:1
+            }],
+            time:3,
+            count:1
+        }
+    },
+    acs:{
+        name:"湮灭约束球",
+        level:5,
+        make:{
+            item:[{
+                id:"pc",
+                count:1
+            },{
+                id:"processor",
+                count:1
+            }],
+            time:20,
+            count:1
+        }
+    },
+    m1:{
+        name:"电磁矩阵",
+        level:3,
+        make:{
+            item:[{
+                id:"coil",
+                count:1
+            },{
+                id:"cb",
+                count:1
+            }],
+            time:3,
+            count:1
+        }
+    },
+    m2:{
+        name:"能量矩阵",
+        level:3,
+        make:{
+            item:[{
+                id:"eg",
+                count:2
+            },{
+                id:"h2",
+                count:2
+            }],
+            time:6,
+            count:1
+        }
+    },
+    m3:{
+        name:"结构矩阵",
+        level:3,
+        make:{
+            item:[{
+                id:"diamond",
+                count:1
+            },{
+                id:"Tis",
+                count:1
+            }],
+            time:8,
+            count:1
+        }
+    },
+    m4:{
+        name:"信息矩阵",
+        level:4,
+        make:{
+            item:[{
+                id:"processor",
+                count:2
+            },{
+                id:"cb",
+                count:1
+            }],
+            time:10,
+            count:1
+        }
+    },
+    m5:{
+        name:"引力矩阵",
+        level:8,
+        make:{
+            item:[{
+                id:"qchip",
+                count:1
+            },{
+                id:"gl",
+                count:1
+            }],
+            time:24,
+            count:2
+        }
+    },
+    m6:{
+        name:"宇宙矩阵",
+        level:9,
+        make:{
+            item:[{
+                id:"m1",
+                count:1
+            },{
+                id:"m2",
+                count:1
+            },{
+                id:"m3",
+                count:1
+            },{
+                id:"m4",
+                count:1
+            },{
+                id:"m5",
+                count:1
+            },{
+                id:"antimatter",
+                count:1
+            }],
+            time:15,
             count:1
         }
     }
