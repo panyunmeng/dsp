@@ -14,26 +14,34 @@ myDiagram.nodeTemplate =
   $(
     go.Node, "Horizontal",
     { background: "#44CCFF" },
-  //$(go.Picture,
-  //  { margin: 10, width: 50, height: 50, background: "red" },
-  //  new go.Binding("source")),
   $(go.Panel, "Table",
     
-    $(go.RowColumnDefinition, { column: 1, width: 3 }),
+    $(go.RowColumnDefinition, { column: 2, width: 3 }),
     $(go.TextBlock, "Default Text",
       {
         row:0,
         column:0,
-        margin: new go.Margin(8,8,0,8),
+        columnSpan:2,
+        margin: new go.Margin(4,4,0,4),
         stroke: "#000000",
-        font: "bold 16px sans-serif" 
+        font: "bold 14px sans-serif" 
       },
       new go.Binding("text", "name")),
+      $(go.Picture,
+        { 
+          column:0,
+          row:1,
+          rowSpan:2,
+          margin: new go.Margin(0,0,4,4), 
+          width: 30, 
+          height: 30, 
+          background: "#0d151c" },
+        new go.Binding("source")),
       $(go.TextBlock, "数量",
       {
         row:1,
-        column:0,
-        margin: new go.Margin(0,8,0,8), 
+        column:1,
+        margin: new go.Margin(0,4,0,4), 
         stroke: "#555555", 
         font: "12px sans-serif" 
       },
@@ -41,8 +49,8 @@ myDiagram.nodeTemplate =
       $(go.TextBlock, "数量",
       {
         row:2,
-        column:0,
-        margin: new go.Margin(0,8,8,8), 
+        column:1,
+        margin: new go.Margin(0,4,4,4), 
         stroke: "#555555", 
         font: "12px sans-serif" 
       },
@@ -68,7 +76,7 @@ function d(id,count){
     };
     temp.key=id+"|"+0;
     temp.name=data[id].name;
-    temp.source="";
+    temp.source=getSource(id);
     if(data[id].make===undefined){
       temp.me="";
       temp.count="";
@@ -86,6 +94,7 @@ function d(id,count){
     doMake(id,temp.key,count);
     model.nodeDataArray=recipes;
     myDiagram.model=model;
+    myDiagram.model.scale=0.5
     
 }
 
@@ -101,10 +110,10 @@ function doMake(id,parent,count){
             }
             var needcount=count/data[id].make.count;
             var make=data[id].make;
-            temp.key=e.id+"|"+Math.floor(Math.random()*100);
+            temp.key=e.id+"|"+Math.floor(random()*random());
             temp.name=data[e.id].name;
             temp.parent=parent;
-            temp.source="img/1.jpg";
+            temp.source=getSource(e.id);
             temp.count=needcount*e.count+"/min";
             if(data[e.id].level>0){
               temp.me=1.0*needcount*e.count/make.count*make.time/60.0;
@@ -129,7 +138,15 @@ function myFix(str){
     return str.slice(0, index + 3);
 }
 
-d("tc");
+function random(){
+  return Math.random()*100;
+}
+
+function getSource(id){
+  return "img/"+id+".jpg";
+}
+
+d("m6");
 
 
 

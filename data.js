@@ -613,7 +613,7 @@ var data={
         level:8,
         make:{
             item:[{
-                id:"drad",
+                id:"drod",
                 count:2
             },{
                 id:"qchip",
@@ -789,7 +789,7 @@ var data={
             count:1
         }
     },
-    drad:{
+    drod:{
         name:"氘核燃料罐",
         level:5,
         make:{

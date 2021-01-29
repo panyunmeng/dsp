@@ -7,6 +7,10 @@
 </head>
 <body>
   <div id="button"></div>
+  <div id="otherButton">
+    <button style="height:40px;width:40px;font-size:1.5rem;margin:0" onclick="myDiagram.scale+=0.2;">+</button>
+    <button style="height:40px;width:40px;font-size:1.5rem;margin:0" onclick="myDiagram.scale-=0.2;">-</button>
+  </div>
   <div id="myDiagramDiv" style="width:100%; height:700px; background-color: #34343C;"></div>
   <div>by 创造城</div>
   <script src="data.js"></script>
@@ -16,14 +20,16 @@
 
       var buttonDiv= document.getElementById("button");
       for (var e in data) {
-        var temp = document.createElement("button");
+        var temp = document.createElement("img");
           temp.id = e;
+          temp.src="img/"+temp.id+".jpg";
+          temp.style="height:40px;width:40px";
           temp.onclick = Function("d('"+e+"')");
           temp.innerText = data[e].name;
+          temp.alt=data[e].name;
           buttonDiv.append(temp);
 
       }
-    
   </script>
 </body>
 </html>
