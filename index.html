@@ -7,19 +7,56 @@
 </head>
 <body>
   <div id="button"></div>
-  <div id="otherButton">
+  <div id="otherButton" style="display:flex">
+    <input type="text" style="width: 80px;height: 35px;" id="getCount" placeholder="每分钟产量">
     <button style="height:40px;width:40px;font-size:1.5rem;margin:0" onclick="myDiagram.scale+=0.2;">+</button>
     <button style="height:40px;width:40px;font-size:1.5rem;margin:0" onclick="myDiagram.scale-=0.2;">-</button>
+    <div>
+      <div id="ccStoneIs" style="display:block;position: absolute;" onclick="addStone('ccStone',0)">❌</div>
+      <img id="ccStoneRe" src="img/ccStone.jpg" style="height: 40px; width: 40px;" alt="光栅石" onclick="addStone('ccStone',0)">
+    </div>
+    <div>
+      <div id="csStoneIs" style="display:block;position: absolute;" onclick="addStone('csStone',0)">❌</div>
+      <img id="csStoneRe" src="img/csStone.jpg" style="height: 40px; width: 40px;" alt="分形硅石" onclick="addStone('csStone',0)">
+    </div>
+    <div>
+      <div id="dStoneIs" style="display:block;position: absolute;" onclick="addStone('dStone',0)">❌</div>
+      <img id="dStoneRe" src="img/dStone.jpg" style="height: 40px; width: 40px;" alt="金伯利亚石" onclick="addStone('dStone',0)">
+    </div>
+    <div>
+      <div id="ciceIs" style="display:block;position: absolute;" onclick="addStone('cice',0)">❌</div>
+      <img id="ciceRe" src="img/cice.jpg" style="height: 40px; width: 40px;" alt="可燃冰" onclick="addStone('cice',0)">
+    </div>
+    <div>
+      <div id="cStoneIs" style="display:block;position: absolute;" onclick="addStone('cStone',0)">❌</div>
+      <img id="cStoneRe" src="img/cStone.jpg" style="height: 40px; width: 40px;" alt="刺笋结晶" onclick="addStone('cStone',0)">
+    </div>
+    <div>
+      <div id="pcStoneIs" style="display:block;position: absolute;" onclick="addStone('pcStone',0)">❌</div>
+      <img id="pcStoneRe" src="img/pcStone.jpg" style="height: 40px; width: 40px;" alt="单极磁石" onclick="addStone('pcStone',0)">
+    </div>
+    <div>
+      <div id="acidIs" style="display:block;position: absolute;" onclick="addStone('acid',1)">❌</div>
+      <img id="acidRe" src="img/acid.jpg" style="height: 40px; width: 40px;" alt="硫酸" onclick="addStone('acid',1)">
+    </div>
+    <div>
+      <div id="h2Is" style="display:block;position: absolute;" onclick="addStone('h2',1)">❌</div>
+      <img id="h2Re" src="img/h2.jpg" style="height: 40px; width: 40px;" alt="氢" onclick="addStone('h2',1)">
+    </div>
+    <div>
+      <div id="ocIs" style="display:block;position: absolute;" onclick="addStone('oc',1)">❌</div>
+      <img id="ocRe" src="img/oc.jpg" style="height: 40px; width: 40px;" alt="有机晶体" onclick="addStone('oc',1)">
+    </div>
   </div>
   <div id="myDiagramDiv" style="width:100%; height:700px; background-color: #34343C;"></div>
   <div>by 创造城</div>
   <script src="data.js"></script>
-  <script src="lib/go.js"></script>
-  <script src="js.js"></script>
   <script>
 
       var buttonDiv= document.getElementById("button");
       for (var e in data) {
+        if(data[e].level==-1)
+          continue;
         var temp = document.createElement("img");
           temp.id = e;
           temp.src="img/"+temp.id+".jpg";
@@ -31,5 +68,7 @@
 
       }
   </script>
+  <script src="lib/go.js"></script>
+  <script src="js.js"></script>
 </body>
 </html>

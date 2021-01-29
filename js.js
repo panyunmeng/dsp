@@ -1,4 +1,4 @@
-
+var nowId;
 var $ = go.GraphObject.make;
 
 var myDiagram =
@@ -68,7 +68,9 @@ myDiagram.linkTemplate =
 var model = $(go.TreeModel);
 
 var recipes=[];
-function d(id,count){
+function d(id){
+    nowId=id;
+    var count= Number(document.getElementById("getCount").value);
     recipes=[];
     var temp={
         key:"",
@@ -82,7 +84,7 @@ function d(id,count){
       temp.count="";
     }else{
       var make=data[id].make
-      if(count===undefined){
+      if(count<=0){
         count=60/make.time;
       }
       temp.count=count+"/min";
@@ -144,6 +146,36 @@ function random(){
 
 function getSource(id){
   return "img/"+id+".jpg";
+}
+
+function addStone(id,flag){
+  if(flag==0){
+    var reid=replaceData[id].re.id;
+    var tempmake=data[reid].make;
+    data[reid].make=replaceData[id].re.make;
+    replaceData[id].re.make=tempmake;
+    if(replaceData[id].re1!==undefined){
+      reid=replaceData[id].re1.id;
+      tempmake=data[reid].make;
+      data[reid].make=replaceData[id].re1.make;
+      replaceData[id].re1.make=tempmake;
+    }
+  }
+  else{
+    var l=data[id].level;
+    data[id].level=(l>=1)?0:1;
+  }
+  isShow(id);
+  d(nowId);
+}
+
+function isShow(id){
+  var elm= document.getElementById(id+"Is");
+  if(elm.style.display=="block")
+    elm.style.display="none";
+  else
+    elm.style.display="block";
+
 }
 
 d("m6");

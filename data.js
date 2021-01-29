@@ -1,4 +1,34 @@
 var data={
+    ccStone:{
+        name:"光栅石",
+        type:"s",
+        level:-1
+    },
+    csStone:{
+        name:"分形硅石",
+        type:"s",
+        level:-1,
+    },
+    dStone:{
+        name:"金伯利亚石",
+        type:"s",
+        level:-1,
+    },
+    cice:{
+        name:"可燃冰",
+        type:"s",
+        level:-1,
+    },
+    cStone:{
+        name:"刺笋结晶",
+        type:"s",
+        level:-1,
+    },
+    pcStone:{
+        name:"单极磁石",
+        type:"s",
+        level:-1,
+    },
     CuM:{
         name:"铜矿",
         type:"s",
@@ -890,7 +920,7 @@ var data={
                 id:"processor",
                 count:2
             },{
-                id:"cb",
+                id:"pb",
                 count:1
             }],
             time:10,
@@ -938,7 +968,110 @@ var data={
             time:15,
             count:1
         }
-    }
+    }    
+}
 
-    
+var replaceData={
+    ccStone:{
+        re:{
+            id:"phc",
+            make:{
+                item:[{
+                    id:"ccStone",
+                    count:1
+                },{
+                    id:"cb",
+                    count:1
+                }],
+                time:3,
+                count:1
+            }
+        },
+        re1:{
+            id:"cc",
+            make:{
+                item:[{
+                    id:"ccStone",
+                    count:6
+                },{
+                    id:"grap",
+                    count:2
+                },{
+                    id:"h2",
+                    count:12
+                }],
+                time:4,
+                count:1
+            }
+        }
+    },
+    csStone:{
+        re:{
+            id:"cs",
+            make:{
+                item:[{
+                    id:"csStone",
+                    count:1
+                }],
+                time:4,
+                count:1
+            }
+        }
+    },
+    dStone:{
+        re:{
+            id:"diamond",
+            make:{
+                item:[{
+                    id:"dStone",
+                    count:1
+                }],
+                time:2,
+                count:1
+            }
+        }
+    },
+    cice:{
+        re:{
+            id:"grap",
+            make:{
+                item:[{
+                    id:"cice",
+                    count:2
+                }],
+                time:2,
+                count:2
+            }
+        }
+    },
+    cStone:{
+        re:{
+            id:"cpipe",
+            make:{
+                item:[{
+                    id:"cStone",
+                    count:2
+                }],
+                time:2,
+                count:2
+            }
+        }
+    },
+    pcStone:{
+        re:{
+            id:"pc",
+            make:{
+                item:[{
+                    id:"pcStone",
+                    count:10
+                },{
+                    id:"Cu",
+                    count:2
+                }],
+                time:4,
+                count:1
+            }
+            
+        }
+    }
 }
