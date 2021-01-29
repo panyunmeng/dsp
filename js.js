@@ -85,7 +85,7 @@ function d(id){
     }else{
       var make=data[id].make
       if(count<=0){
-        count=60/make.time;
+        count=60/make.time*make.count;
       }
       temp.count=count+"/min";
       temp.me=1.0*count/make.count*make.time/60.0;
@@ -111,7 +111,7 @@ function doMake(id,parent,count){
                 console.log(e.id);
             }
             var needcount=count/data[id].make.count;
-            var make=data[id].make;
+            var make=data[e.id].make;
             temp.key=e.id+"|"+Math.floor(random()*random());
             temp.name=data[e.id].name;
             temp.parent=parent;
